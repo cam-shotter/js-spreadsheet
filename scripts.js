@@ -7,8 +7,6 @@ let rowHeaders = []
 function drawGraph() {
     fillHeaders(colLength, rowLength)
     constructGrid()
-    console.log("row: ", rowHeaders);
-    console.log("col: ", columnHeaders);
 }
 
 function fillHeaders(columnLength, rowLength) {
@@ -46,7 +44,7 @@ function constructGrid() {
                 cell.innerHTML = columnHeaders[x-1]
             }
             if (x < 1 && y > 0) {
-                cell.innerHTML = rowHeaders[y-1]
+                cell.innerHTML = rowHeaders[y]
             }
             if (y > 0 && x > 0) {
                 cell.innerHTML = `<input class="input-cell" type="text" id="${columnHeaders[x - 1]}${rowHeaders[y-1]} placeholder=""/>`
