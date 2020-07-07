@@ -55,3 +55,10 @@ function constructGrid() {
         } 
     }
 }
+
+document.addEventListener('click', function (event) {
+    console.log(event)
+    event.target.addEventListener("input", function (event) {
+        console.log("input: ", event)
+    })
+})
