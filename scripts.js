@@ -60,3 +60,7 @@ document.addEventListener('click', function (event) {
         console.log("input: ", event)
     })
 })
+
+document.addEventListener('onblur', function (event) {
+    console.log("blur: ", event)
+})
