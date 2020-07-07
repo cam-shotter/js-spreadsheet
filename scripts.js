@@ -49,7 +49,7 @@ function constructGrid() {
                 cell.innerHTML = rowHeaders[y-1]
             }
             if (y > 0 && x > 0) {
-                cell.innerHTML = `<input type="text" id="${columnHeaders[x - 1]}${rowHeaders[y-1]} placeholder=""/>`
+                cell.innerHTML = `<input class="input-cell" type="text" id="${columnHeaders[x - 1]}${rowHeaders[y-1]} placeholder=""/>`
             }
             
         } 

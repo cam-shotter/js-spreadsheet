@@ -1,3 +1,7 @@
 td {
     border: black solid 1px;
 }
+
+.input-cell {
+    max-width: 5em;
+}
