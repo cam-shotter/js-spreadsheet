@@ -8,7 +8,7 @@ let rowHeaders = []
 
 function drawGraph() {
     fillHeaders(colLength, rowLength)
-    constructGrid(colLength, rowLength)
+    constructGrid()
     console.log("row: ", rowHeaders);
     console.log("col: ", columnHeaders);
 }
@@ -41,25 +41,15 @@ function constructGrid() {
     let tableWidth = colLength+1;
     let tableHeight = rowLength+1;
     for (let y = 0; y < tableHeight; y++) {
-        if (y === 0) {
-            let header = table.createTHead();
-            let row = table.insertRow(y);
-            for (let x = 0; x < tableWidth; x++) {
-                let cell = row.insertCell(x);
-                if (x === 0) {
-                    return;
-                } else {
-                    cell.innerHTML = columnHeaders[y]
-                }
+        let row = table.insertRow(y);
+        for (let x = 0; x < tableWidth; x++) {
+            let cell = row.insertCell(x);
+            if (y < 1 && x > 0) {
+                cell.innerHTML = columnHeaders[x-1]
             }
-        } else {
-            let row = table.insertRow(y);
-            for (let x = 0; x < tableWidth; x++) {
-                let cell = row.insertCell(x);
-                if (x === 0) {
-                    cell.innerHTML = rowHeaders[x];
-                }
+            if (x < 1 && y > 0) {
+                cell.innerHTML = rowHeaders[y-1]
             }
-        }
+        } 
     }
 }
